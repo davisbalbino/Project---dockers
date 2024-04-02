@@ -15,9 +15,7 @@ Reformulação do app do inatel, contendo as páginas mais acessadas dos alunos
   - JavaScript
   - React.js
   - HTML5 e CSS3
-  - Biblioteca de gerenciamento de estado (ex: Redux)
-  - Ferramenta de construção de interface de usuário (ex: Material-UI)
-
+  
 ## Instalação
 
 ## Uso
