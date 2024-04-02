@@ -23,11 +23,9 @@ Reformulação do app do inatel, contendo as páginas mais acessadas dos alunos
 ## Autores
 Davi dos Santos Balbino Marcelino - GES 68
 Jonathan Stefan Covelo de Carvalho - GEC 1668
-
+Marcelo Henrique Souza Abrantes- GEC 1538
 Pedro Henrique do Prado Paiva - GEC 1685
 
-[Liste os autores ou colaboradores do projeto]
 
 ## Licença
 
-[Inclua informações sobre a licença do seu projeto]
