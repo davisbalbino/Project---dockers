@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
+
 import "./css/login.css";
 
 function LoginPage() {
@@ -20,10 +22,28 @@ function LoginPage() {
 })
 .then(response => response.json())
 .then(data => {
-  console.log(data);
+  if (data.success) {
+    Swal.fire({
+      icon: "success",
+      title: "Uhuuuul",
+      text: "Logado com sucesso!",
+    });
+  }
+  else{
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Senha ou usuário incorretos!",
+    });
+  }
 })
 .catch(error => {
-  console.error('Erro ao fazer requisição:', error);
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Senha ou usuário incorretos!",
+  });
+
 });
 
     
