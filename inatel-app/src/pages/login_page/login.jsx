@@ -8,7 +8,24 @@ function LoginPage() {
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleSubmit = (e) => {
-    
+    fetch('http://localhost:5000/api/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    username: username,
+    password: password,
+  }),
+})
+.then(response => response.json())
+.then(data => {
+  console.log(data);
+})
+.catch(error => {
+  console.error('Erro ao fazer requisição:', error);
+});
+
     
   };
 
