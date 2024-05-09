@@ -21,6 +21,7 @@
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-dev": "concurrently \"npm run server\" \"npm test\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "jest": "^27.5.1"
   }
 }

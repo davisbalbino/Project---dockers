@@ -56,7 +56,7 @@ function LoginPage() {
             <hi>Academico</hi>
         </div>
         
-        <form className="formuario-infos" onSubmit={handleSubmit}>
+        <form className="formuario-infos">
           <div className="forumalario-input">
             <input
               placeholder="Matrícula"
@@ -76,7 +76,7 @@ function LoginPage() {
             />
           </div>
         </form>
-        <button onClick={handleSubmit}>Login</button>
+        <button  onClick={handleSubmit}>Login</button>
       </div>
     </div>
   );
