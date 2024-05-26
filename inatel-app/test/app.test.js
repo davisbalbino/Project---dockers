@@ -1,5 +1,4 @@
 // app.test.js
-const request = require('supertest');
 // Importa os dados de usuários do módulo '../db'
 const users = require('../db');
 
