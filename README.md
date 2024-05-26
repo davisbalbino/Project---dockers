@@ -21,7 +21,11 @@ Reformulação do app do inatel, contendo as páginas mais acessadas dos alunos
 
 
 ## Uso
+Para iniciar o projeto use:
+npm run dev
 
+Para executar testes:
+npm run test-dev
 ## Autores
 Davi dos Santos Balbino Marcelino - GES 68
 Jonathan Stefan Covelo de Carvalho - GEC 1668
