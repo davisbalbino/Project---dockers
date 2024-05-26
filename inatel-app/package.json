@@ -22,8 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-dev": "concurrently \"npm run server\" \"npm test\"",
-    "eject": "react-scripts eject",
-    "test": "jest"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

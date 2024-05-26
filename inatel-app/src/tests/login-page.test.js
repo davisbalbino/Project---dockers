@@ -2,10 +2,8 @@
 import React from 'react';
 import { render, fireEvent, getByText, waitFor, queryByPlaceholderText } from '@testing-library/react';
 import LoginPage from '../pages/login_page/login';
-import userEvent from '@testing-library/user-event';
 import Swal from 'sweetalert2';
 import '@testing-library/jest-dom/extend-expect';
-
 
 jest.mock('sweetalert2', () => ({
   fire: jest.fn()
