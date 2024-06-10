@@ -1,0 +1,29 @@
+# Use a imagem oficial do Node.js como base para a construção
+FROM node:16 AS build
+
+# Defina o diretório de trabalho no container
+WORKDIR /app
+
+# Copie o package.json e o package-lock.json para o diretório de trabalho
+COPY package*.json ./
+
+# Instale as dependências
+RUN npm install
+
+# Copie o restante do código da aplicação para o diretório de trabalho
+COPY . .
+
+# Compile a aplicação React
+RUN npm run build
+
+# Use uma imagem Nginx oficial para servir os arquivos estáticos da build
+FROM nginx:alpine
+
+# Copie os arquivos de build da fase anterior para o diretório padrão do Nginx
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Exponha a porta que o Nginx vai usar
+EXPOSE 80
+
+# Comando padrão para rodar o Nginx
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  react-app:
+    build: .
+    ports:
+      - "3000:80"
+    networks:
+      - minha-rede
+
+  mongodb:
+    image: mongo:latest
+    networks:
+      - minha-rede
+
+  setup:
+    command: ["node", "db.js"]  # Comando para executar o script db.js
+    volumes:
+      - ./react-app:/inatel-app  # Mapeia o diretório do react-app para o diretório /app dentro do contêiner
+    depends_on:
+      - mongodb
+    networks:
+      - minha-rede
+
+networks:
+  minha-rede:
+    driver: bridge
