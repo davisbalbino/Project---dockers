@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+    environment {
+            EMAIL_ADDRESS = 'davidossantosbalbinomarcelino@gmail.com'
+        }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh 'npm install i'
+                }
+            }
+        }
+
+        stage('Execute Tests') {
+            steps {
+                script {
+                    sh 'npm test-dev'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    sh 'npm build'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+             archiveArtifacts artifacts: '**', fingerprint: true
+             
+             emailext (
+                subject: "Resultado do Pipeline CI/CD",
+                body: "Pipeline: ${currentBuild.fullDisplayName}\nStatus: ${currentBuild.result}\nPara mais informações, acesse o Jenkins: ${env.BUILD_URL}",
+                to: "${env.EMAIL_ADDRESS}",
+                mimeType: 'text/plain'
+            )
+        }
+    }
+}
