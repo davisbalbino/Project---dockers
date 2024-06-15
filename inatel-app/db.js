@@ -1,22 +1,23 @@
 const { MongoClient } = require('mongodb');
 
-const MONGODB_URI = 'mongodb://localhost:27017';
-const DB_NAME = 'test';
-const COLLECTION_NAME = 'users';
+// Configurações do MongoDB
+const MONGO_URI = 'mongodb://root:root@localhost:27017'; // URI de conexão com autenticação
+const DB_NAME = 'test'; // Nome do banco de dados
+const COLLECTION_NAME = 'users'; // Nome da coleção
 
 // Dados dos usuários
 const usersData = [
-    { username: 'user1', password: 'password1' },
-    { username: 'user2', password: 'password2' }
+    { username: 'admin', password: 'admin' },
+    { username: 'user', password: 'user' }
 ];
 
-// Função para inserir os usuários no banco de dados
+// Função assíncrona para inserir os usuários no banco de dados
 async function insertUsers() {
-    let client; // Declaração da variável client fora do bloco try
+    let client;
 
     try {
         // Conectar ao MongoDB
-        client = new MongoClient(MONGODB_URI, { useUnifiedTopology: true });
+        client = new MongoClient(MONGO_URI);
         await client.connect();
         console.log("Conectado ao servidor MongoDB");
 
@@ -27,8 +28,8 @@ async function insertUsers() {
         const collection = db.collection(COLLECTION_NAME);
 
         // Inserir os usuários na coleção
-        await collection.insertMany(usersData);
-        console.log("Usuários inseridos com sucesso");
+        const result = await collection.insertMany(usersData);
+        console.log("Usuários inseridos com sucesso:", result.insertedCount);
 
     } catch (error) {
         console.error("Erro ao inserir usuários:", error);

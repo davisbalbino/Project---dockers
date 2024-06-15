@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = 'mongodb://localhost:27017';
+const MONGODB_URI = 'mongodb://root:root@localhost:27017';
 const DB_NAME = 'test';
 const COLLECTION_NAME = 'users';
 
@@ -43,6 +43,28 @@ app.post('/api/login', async (req, res) => {
         res.status(500).json({ success: false, message: 'Erro interno do servidor' });
     } 
 });
+
+app.post('/api/', async (req, res) => {
+    // Aqui você pode processar a requisição conforme necessário
+    // Por exemplo, enviar uma resposta HTML simples
+    const htmlResponse = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Response</title>
+      </head>
+      <body>
+        <h1>Hello, this is HTML response!</h1>
+        <p>You accessed /api/ route using POST method.</p>
+      </body>
+      </html>
+    `;
+    
+    // Enviar o HTML como resposta
+    res.send(htmlResponse);
+  });
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
