@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   react-app:
-    build: .
+    image: davisbalbino/inatel-app:latest
     ports:
       - "3000:80"
 
@@ -12,7 +12,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
-    
+
   mongo-express:
     image: mongo-express:latest
     restart: always
@@ -24,3 +24,6 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongo  
     depends_on:
       - mongo
+
+  
+    
