@@ -1,32 +1,39 @@
-version: '3'
+version: '3.8'
 services:
+
+  api:
+    image: my-api:latest 
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongo:27017
+      - DB_NAME=test
+      - COLLECTION_NAME=users
+    depends_on:
+      - mongo
+
   react-app:
-    build: .
+    image: inatel-app-react-app:latest
     ports:
       - "3000:80"
-    networks:
-      - minha-rede
- 
-  mongodb:
+
+  mongo:
     image: mongo:latest
-    networks:
-      - minha-rede
- 
-  mongo-express:
-    image: mongo-express
-    container_name: mongo-express
+    ports:
+      - "27017:27017"
     environment:
-      ME_CONFIG_MONGODB_SERVER: mongodb
-      ME_CONFIG_MONGODB_PORT: 27017
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+  mongo-express:
+    image: mongo-express:latest
+    restart: always
     ports:
       - "8081:8081"
-    networks:
-      - minha-rede
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_SERVER: mongo  
     depends_on:
-      - mongodb
- 
-networks:
-  minha-rede:
-    driver: bridge
+      - mongo
