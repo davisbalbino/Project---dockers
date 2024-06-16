@@ -1,19 +1,25 @@
-# Use a imagem oficial do Node.js como imagem base
 FROM node:16 AS build
-# Crie um diretório de trabalho dentro do contêiner
+
+# Crie um diretório de trabalho
 WORKDIR /usr/src/app
 
-# Copie o package.json e o package-lock.json (se existir)
+# Copie o package.json e package-lock.json
 COPY package*.json ./
 
-# Instale as dependências do aplicativo
+# Instale as dependências
 RUN npm install
 
-# Copie o restante do código da aplicação
+# Copie o restante dos arquivos da aplicação
 COPY . .
 
-# Exponha a porta em que a aplicação irá rodar
+# Configure as variáveis de ambiente
+ENV PORT=5000
+ENV MONGODB_URI=mongodb://root:root@localhost:27017
+ENV DB_NAME=test
+ENV COLLECTION_NAME=users
+
+# Exponha a porta que a aplicação vai rodar
 EXPOSE 5000
 
 # Comando para rodar a aplicação
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
