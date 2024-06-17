@@ -1,22 +1,12 @@
 version: '3.8'
-services:
-
-  api:
-    image: my-api:latest 
-    ports:
-      - "5000:5000"
-    environment:
-      - PORT=5000
-      - MONGODB_URI=mongodb://mongo:27017
-      - DB_NAME=test
-      - COLLECTION_NAME=users
-    depends_on:
-      - mongo
+services:  
 
   react-app:
     image: inatel-app-react-app:latest
     ports:
       - "3000:80"
+    volumes:
+      - ./jenkins_compose/jenkins_configuration:/var/jenkins_home   
 
   mongo:
     image: mongo:latest
@@ -25,6 +15,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - \Users\letic\Documents/mongodb:/data/db  
 
   mongo-express:
     image: mongo-express:latest
