@@ -1,20 +1,19 @@
 version: '3.8'
 services:
 
-  api:
-    image: my-api:latest  # Use a imagem existente
-    ports:
-      - "5000:5000"
-    environment:
-      - PORT=5000
-      - MONGODB_URI=mongodb://mongo:27017
-      - DB_NAME=test
-      - COLLECTION_NAME=users
-    depends_on:
-      - mongo
-
+  jenkins:
+      build: ./dockerfile_jenkins
+      privileged: true
+      ports:
+        - "8080:8080"
+        - "50000:50000"
+      volumes:
+        - ./jenkins_compose/jenkins_configuration:/var/jenkins_home
+        - /var/run/docker.sock:/var/run/docker.sock # Para permitir que Jenkins use Docker
+      environment:
+            EMAIL_ADDRESS: 'davidossantosbalbinomarcelino@gmail.com'
   react-app:
-    image: inatel-app-react-app:latest
+    build: .
     ports:
       - "3000:80"
 

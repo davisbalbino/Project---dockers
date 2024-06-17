@@ -22,7 +22,7 @@
     "server": "node server.js",
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "test-dev": "concurrently \"npm run server\" \"npm test\"",
     "eject": "react-scripts eject"
   },

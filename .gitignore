@@ -1,4 +1,5 @@
 inatel-app/node_modules/
+inatel-app/jenkins_compose/
 build
 data
 server/node_modules
