@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2024-06-18 01:47:22.339 UTC</timestamp>
+  <original>
+    <name>pipeline2multibranch/branch-davi</name>
+    <number>1</number>
+  </original>
+  <md5sum>06e733283fa43d1dd57738cfc409adbd</md5sum>
+  <fileName>logo.svg</fileName>
+  <usages>
+    <entry>
+      <string>pipeline2multibranch/branch-davi</string>
+      <ranges>1</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

@@ -1,0 +1,25 @@
+FROM node:16 AS build
+
+# Crie um diretório de trabalho
+WORKDIR /usr/src/app
+
+# Copie o package.json e package-lock.json
+COPY package*.json ./
+
+# Instale as dependências
+RUN npm install
+
+# Copie o restante dos arquivos da aplicação
+COPY . .
+
+# Configure as variáveis de ambiente
+ENV PORT=5000
+ENV MONGODB_URI=mongodb://root:root@localhost:27017
+ENV DB_NAME=test
+ENV COLLECTION_NAME=users
+
+# Exponha a porta que a aplicação vai rodar
+EXPOSE 5000
+
+# Comando para rodar a aplicação
+CMD ["node", "server.js"]

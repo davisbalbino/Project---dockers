@@ -1,0 +1,33 @@
+# Usando a imagem oficial do Jenkins LTS
+FROM jenkins/jenkins:lts
+
+USER root
+
+# Adicionar informações de depuração e atualizar repositórios
+RUN apt-get clean && \
+    apt-get update -o Acquire::CompressionTypes::Order::=gz && \
+    apt-get update && apt-get upgrade -y
+
+# Instalar as dependências necessárias para a pipeline
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    nodejs \
+    npm \
+    build-essential \
+    mailutils \
+    msmtp
+
+# Criar o arquivo de configuração do msmtp
+RUN echo "account default" > /etc/msmtprc && \
+    echo "host smtp.gmail.com" >> /etc/msmtprc && \
+    echo "port 587" >> /etc/msmtprc && \
+    echo "auth on" >> /etc/msmtprc && \
+    echo "tls on" >> /etc/msmtprc && \
+    echo "tls_trust_file /etc/ssl/certs/ca-certificates.crt" >> /etc/msmtprc && \
+    echo "logfile /var/log/msmtp.log" >> /etc/msmtprc
+
+# Conceder permissões
+RUN chmod 600 /etc/msmtprc
+
+USER jenkins

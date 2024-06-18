@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2024-06-18 01:47:21.900 UTC</timestamp>
+  <original>
+    <name>pipeline2multibranch/branch-davi</name>
+    <number>1</number>
+  </original>
+  <md5sum>2602cfc12d1418cdb8fb886469666b3d</md5sum>
+  <fileName>predio-inatel.jpg</fileName>
+  <usages>
+    <entry>
+      <string>pipeline2multibranch/branch-davi</string>
+      <ranges>1</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
