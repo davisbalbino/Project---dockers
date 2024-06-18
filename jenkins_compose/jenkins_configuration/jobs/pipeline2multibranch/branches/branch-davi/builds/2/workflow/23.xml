@@ -1,0 +1,26 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@907.v6713a_ed8a_573">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@3903.v48a_8836749e9">
+    <parentIds>
+      <string>22</string>
+    </parentIds>
+    <id>23</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.durable_task.ShellStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@3903.v48a_8836749e9">
+      <arguments>
+        <entry>
+          <string>script</string>
+          <string>npm install</string>
+        </entry>
+      </arguments>
+      <sensitiveVariables/>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@1316.v33eb_726c50b_a_">
+      <startTime>1718676750186</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>

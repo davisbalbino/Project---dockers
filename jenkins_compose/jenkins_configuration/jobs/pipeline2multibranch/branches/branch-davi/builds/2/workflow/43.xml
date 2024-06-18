@@ -1,0 +1,27 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@907.v6713a_ed8a_573">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@3903.v48a_8836749e9">
+    <parentIds>
+      <string>42</string>
+    </parentIds>
+    <id>43</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.StageStep</descriptorId>
+  </node>
+  <actions>
+    <wf.a.BodyInvocationAction plugin="workflow-api@1316.v33eb_726c50b_a_"/>
+    <wf.a.LabelAction plugin="workflow-api@1316.v33eb_726c50b_a_">
+      <displayName>Declarative: Post Actions</displayName>
+    </wf.a.LabelAction>
+    <wf.a.TimingAction plugin="workflow-api@1316.v33eb_726c50b_a_">
+      <startTime>1718676886324</startTime>
+    </wf.a.TimingAction>
+    <wf.a.TagsAction plugin="workflow-api@1316.v33eb_726c50b_a_">
+      <tags>
+        <entry>
+          <string>SYNTHETIC_STAGE</string>
+          <string>POST</string>
+        </entry>
+      </tags>
+    </wf.a.TagsAction>
+  </actions>
+</Tag>

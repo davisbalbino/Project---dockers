@@ -1,0 +1,24 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@907.v6713a_ed8a_573">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@3903.v48a_8836749e9">
+    <parentIds>
+      <string>2</string>
+    </parentIds>
+    <id>3</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.ExecutorStep</descriptorId>
+  </node>
+  <actions>
+    <s.a.LogStorageAction/>
+    <wf.a.TimingAction plugin="workflow-api@1316.v33eb_726c50b_a_">
+      <startTime>1718676661535</startTime>
+    </wf.a.TimingAction>
+    <org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution_-QueueItemActionImpl plugin="workflow-durable-task-step@1353.v1891a_b_01da_18">
+      <id>13</id>
+    </org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution_-QueueItemActionImpl>
+    <s.a.WorkspaceActionImpl>
+      <node></node>
+      <path>/var/jenkins_home/workspace/pipeline2multibranch_branch-davi</path>
+      <labels class="sorted-set"/>
+    </s.a.WorkspaceActionImpl>
+  </actions>
+</Tag>

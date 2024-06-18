@@ -7,11 +7,11 @@ Authorization: Basic bGV0aWNpYW1lcnNzRU5HOmdocF9IelFkbWVzcnZSV01DSUZJdHFndGxoU0E
 HTTP/1.1 200 
 30
 server: GitHub.com
-date: Tue, 18 Jun 2024 01:46:27 GMT
+date: Tue, 18 Jun 2024 02:10:33 GMT
 content-type: application/json; charset=utf-8
 cache-control: private, max-age=60, s-maxage=60
 vary: Accept, Authorization, Cookie, X-GitHub-OTP
-etag: W/"9b211813509b786c18ac2bfc009504df92bdcead"
+etag: W/"706628d99d4994822834e679b818c250c65e0a64"
 last-modified: Mon, 17 Jun 2024 14:32:05 GMT
 x-oauth-scopes: admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, admin:ssh_signing_key, audit_log, codespace, copilot, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:packages
 x-accepted-oauth-scopes: 
@@ -19,9 +19,9 @@ github-authentication-token-expiration: 2024-07-17 15:22:09 UTC
 x-github-media-type: github.v3; format=json
 x-github-api-version-selected: 2022-11-28
 x-ratelimit-limit: 5000
-x-ratelimit-remaining: 4988
+x-ratelimit-remaining: 4970
 x-ratelimit-reset: 1718677711
-x-ratelimit-used: 12
+x-ratelimit-used: 30
 x-ratelimit-resource: core
 access-control-expose-headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
 access-control-allow-origin: *
@@ -33,9 +33,9 @@ referrer-policy: origin-when-cross-origin, strict-origin-when-cross-origin
 content-security-policy: default-src 'none'
 vary: Accept-Encoding, Accept, X-Requested-With
 content-encoding: gzip
-x-github-request-id: DA92:2CE0F5:2326695:237850D:6670E6F2
-OkHttp-Sent-Millis: 1718675188577
-OkHttp-Received-Millis: 1718675188857
+x-github-request-id: DBA6:2EFBBE:1A01B96:1A327C4:6670EC99
+OkHttp-Sent-Millis: 1718676634464
+OkHttp-Received-Millis: 1718676634746
 
 TLS_AES_128_GCM_SHA256
 3
