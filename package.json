@@ -17,15 +17,15 @@
     "sweetalert2": "^11.10.8",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "server": "node server.js",
-    "dev": "concurrently \"npm run server\" \"npm start\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test-dev": "concurrently \"npm run server\" \"npm test\"",
-    "eject": "react-scripts eject"
-  },
+ "scripts": {
+  "start": "react-scripts start",
+  "server": "node server.js",
+  "dev": "concurrently \"npm run server\" \"npm start\"",
+  "build": "react-scripts build",
+  "test": "react-scripts test --watchAll=false",
+  "test-dev": "concurrently \"npm run server\" \"npm test\" && npm run kill-processes",
+  "kill-processes": "killall node || taskkill /IM node.exe /F > nul"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
